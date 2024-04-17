@@ -1,0 +1,6 @@
+Model: bert_hinge
+2023-11-01 02:59:05.053830  Output analysis: acc: 65.1, precision: 84.87, recall: 69.26, tnr: 47.37, npv: 26.55, confusion: {'tn': 90, 'fp': 100, 'fn': 249, 'tp': 561}, 
+2023-11-01 02:59:05.053830  Current testing AUC: 0.6278
+Model: bert_only
+2023-11-01 10:21:37.911592  Output analysis: acc: 62.6, precision: 85.32, recall: 64.81, tnr: 53.37, npv: 26.61, confusion: {'tn': 103, 'fp': 90, 'fn': 284, 'tp': 523}, 
+2023-11-01 10:21:37.911592  Current testing AUC: 0.6181
