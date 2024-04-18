@@ -5,7 +5,6 @@ def group_edge_type(edge_type):
         2:1,
         3:2,
 
-        # Beilei: Missing default for nl->l and l -> l
         4:8,
         5:9,
 
