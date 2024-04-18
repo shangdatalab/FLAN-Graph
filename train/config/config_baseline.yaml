@@ -1,0 +1,21 @@
+num_heads: 3
+epochs: 20
+lr: 0.001
+model: "gat" # "gat", "gcn", "sage", "gcn2", "treeLSTM"
+hidden_size: 128
+gnn_layers: 4
+batch_size: 256
+use_app_feats: true
+from_root: true
+hinge_lambda: 0.1
+use_precomputed_class_weight: true
+use_graph_feature: false #always false for non-gpa
+seed: 0
+
+aggregator_type: "treeLSTM" #for Sage (mean, gcn, pool, lstm).
+
+data: # path to the raw csv file
+train_data_graph_path: # path to the train data graph
+val_data_graph_path: # path to the validation data graph
+test_data_graph_path: # path to the test data graph
+output_des: # path to where the output will be saved

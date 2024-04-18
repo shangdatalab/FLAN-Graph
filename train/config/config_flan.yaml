@@ -1,0 +1,23 @@
+num_heads: 3
+epochs: 20
+lr: 0.001
+model: treeLSTM # "gat", "gcn", "sage", "gcn2", "treeLSTM"
+hidden_size: 128
+gnn_layers: 2
+batch_size: 256
+use_app_feats: true
+from_root: true
+hinge_lambda: 0.1
+use_precomputed_class_weight: true
+use_graph_feature: true
+seed: 0
+
+aggregator_type: "gcn" #for Sage model, could be "mean", "gcn", "pool", "lstm".
+gnn_aggregate_type: "root" # for FLAN, could be "mean", "root", "sum"
+root_to_child: true # for FLAN treeLSTM
+
+data: # path to the raw csv file
+train_data_graph_path: # path to the train data graph
+val_data_graph_path: # path to the validation data graph
+test_data_graph_path: # path to the test data graph
+output_des: # path to where the output will be saved
