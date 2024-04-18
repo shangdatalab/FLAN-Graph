@@ -4,10 +4,10 @@ Source code and dataset for our paper "[Beyond Scaling: Predicting Patent Approv
 
 ## 0. Overview
 
-#### Code
-Our code consists of the following two parts: **(1) Scaling up SOTA with LLMs** (both embedding-based and prompt-based) and **(2) FLAN Graph**. 
+### Code
+Our code consists of the following two parts: **(1) Scaling up SOTA with LLMs** and **(2) FLAN Graph**. 
 
-#### Data
+### Data
 The **PatentAP** dataset we use in the paper is on 🤗 Huggingface [[link](https://huggingface.co/datasets/shangdatalab-ucsd/PatentAP)].
 
 ## 1. Scaling up with LLMs
