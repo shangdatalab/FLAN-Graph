@@ -48,5 +48,5 @@ The training can be done using the command:
 #### Dependencies
 - See `requirements.txt`
 
-## Prompt-based
+## 2. Prompt-based
 The prompt templates are provided [here](/Scaling_w_LLMs/prompt-based/template.py), covering LLaMA, Mixtral, Vicuna, and OpenAI GPT models.
