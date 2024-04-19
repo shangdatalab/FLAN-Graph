@@ -14,13 +14,13 @@ The **PatentAP** dataset we use in the paper is on 🤗 Huggingface [[link](http
 
 ### 1.1 Embedding-based
 
-The code base for embedding-based training and inference can be found [here](/Scaling_w_LLMs/embedding-based/).
+The code base for embedding-based training and inference can be found [here](/Scaling_w_LLMs/).
 
 ### 1.2 Prompting-based
-The prompt templates we used are provided [here](/Scaling_w_LLMs/prompt-based/).
+The prompt templates we used are provided [here](/Scaling_w_LLMs/).
 
 ## 2. Customized FLAN Graph
-The construction process and the saved results of the FLAN Graph can be found [here](/FLAN-Graph/graph_construct/).
+The construction process and the saved results of the FLAN Graph can be found [here](/FLAN-Graph/).
 
 
 ## Citation
