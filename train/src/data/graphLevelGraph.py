@@ -7,6 +7,7 @@ from tqdm import tqdm
 from dgl.data.utils import save_graphs, load_graphs
 from .utils import group_edge_type
 import os
+from tree_builder import buildGraphs
 
 class GraphLevelGraph(DGLDataset):
     def __init__(self,
@@ -33,7 +34,14 @@ class GraphLevelGraph(DGLDataset):
 
     def process(self):
         # process raw data to graphs, labels, splitting masks
-        pass
+        print("start building graphs in %s" %(self.path))
+        self.trees, claim_level_infos = buildGraphs(self.claims_list_transformed, root2child=self.root2child)
+        self.claim_info_dicts = {
+            "app_num": torch.stack([a[0] for a in claim_level_infos]),\
+            "feat_encoding": torch.stack([a[1] for a in claim_level_infos]),\
+            "original_claim_idx": torch.stack([a[2] for a in claim_level_infos]),\
+            "label": torch.stack([a[3] for a in claim_level_infos])
+            } # has to be in the format of (str:Tensor)
 
     def __getitem__(self, idx):
         # get one example by index
