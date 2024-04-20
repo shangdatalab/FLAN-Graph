@@ -1,8 +1,0 @@
-train_csv_data:               # path to the raw train csv file
-validation_csv_data:          # path to the raw validation csv file
-test_csv_data:                # path to the raw test csv file
-
-
-train_data_graph_path:        # path to save the train data graph
-validation_data_graph_path:   # path to save the train data graph
-test_data_graph_path:         # path to save the train data graph

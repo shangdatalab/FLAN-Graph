@@ -51,7 +51,6 @@ PARSER_SERVER_ADD = "" # address of StanfordCoreNLPServer
 PARSER_DIRECTORY = "" # path to the directory containing StanfordCoreNLPServer
 PARSER_SERVER_COMMAND = 'nohup java -mx4g -cp "*" edu.stanford.nlp.pipeline.StanfordCoreNLPServer -quiet true -preload tokenize,ssplit,pos,lemma,ner,parse,depparse -status_port 9196 -port 9196 -timeout 300000 > ./nohup.out'
 
-
 CUDA_LIST = []
 
 
@@ -181,8 +180,6 @@ def buildGraphs(claims_list_transformed, root2child=True, graph_path="./full_tra
             )
             trees.append(dgl_graph)
             graph_level_infoS.append(graph_level_info)
-
-    print(datetime.now().time())
     return trees, graph_level_infoS
 
 ################################ Helper Functions ################################

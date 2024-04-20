@@ -181,13 +181,9 @@ def group_edge_type(edge_type):
 
 def parse_args():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--config', type=str, default='./config/config_build_graph.yaml')
+    parser.add_argument('--csv_path', type=str)
+    parser.add_argument('--graph_path', type=str)
     parser.add_argument('--root2child', dest='root2child', action='store_true')
     parser.add_argument('--no-root2child', dest='root2child', action='store_false')
     parser.set_defaults(root2child=True)
     return parser.parse_args()
-
-def load_config(config_file_path : str):
-    with open(config_file_path, 'r') as file:
-        config = yaml.safe_load(file)
-    return config
