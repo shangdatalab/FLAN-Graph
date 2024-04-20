@@ -56,8 +56,6 @@ CUDA_LIST = []
 
 
 ############################### Variables ###############################
-GRAPH_READY = False
-
 DATABASE_PARAMS = ""
 CSV_DATA_PATH = ""
 NESTED_NUMERICAL_INDICATOR = ["(2)", "(ii)", "(b)"]  # indicator of nested component
@@ -119,27 +117,16 @@ def buildGraphs(claims_list_transformed, root2child=True, graph_path="./full_tra
     ROOT2CHILD = root2child
     GRAPH_PATH = graph_path
 
-    # get graphs
-    if not GRAPH_READY:
-        # build metagarphs
-        print("==> Start to build graphs")
-        meta_graphs, skip_count = _build_meta_graphs(claims_list_transformed)
-        print("!! Skiping {} applications".format(skip_count))
-        
-        # save graphs
-        print("Saving graph to ", GRAPH_PATH)
-        # _save_graph(meta_graphs)
-          
-        
-        # encode graphs
-        print("==> Start to add encodings")
-        encoder = SentenceTransformer("stsb-roberta-large", device="cuda")
+    # build metagarphs
+    print("==> Start to build graphs")
+    meta_graphs, skip_count = _build_meta_graphs(claims_list_transformed)
+    print("!! Skiping {} applications".format(skip_count))
+    
+    # encode graphs
+    print("==> Start to add encodings")
+    encoder = SentenceTransformer("stsb-roberta-large", device="cuda")
 
-        meta_graphs = _encode_graph_nodes(meta_graphs, encoder)
-    else:
-        # load graphs
-        meta_graphs = pickle.load(open(GRAPH_PATH, "rb"))
-        print("==> Graphs loaded")
+    meta_graphs = _encode_graph_nodes(meta_graphs, encoder)
 
     # conert to dgl trees
     print("==> Start to converting to dgl graphs")
@@ -199,17 +186,6 @@ def buildGraphs(claims_list_transformed, root2child=True, graph_path="./full_tra
     return trees, graph_level_infoS
 
 ################################ Helper Functions ################################
-
-def _save_graph(graph_list):
-  for i, claim_graph_list in enumerate(tqdm(graph_list)):
-    claim_graph_json = []
-    for block in claim_graph_list:
-      cjson = {}
-      cjson['label'] = block[1][3].item()
-      cjson['graph'] = json_graph.node_link_data(block[0])
-      claim_graph_json.append(cjson)
-    with open("{}/{}.graph.pickle".format(GRAPH_PATH, i), "w") as f:
-      json.dump(claim_graph_json, f)
 
 def _build_batch_graphs(
     apps_claims_list,
