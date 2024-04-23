@@ -25,7 +25,7 @@ The construction process and the saved results of the FLAN Graph can be found [h
 
 ## Citation
 If these codes and data help you, please consider citing us as follows.
-```abs
+```bib
 @misc{gao2024scaling,
       title={Beyond Scaling: Predicting Patent Approval with Domain-specific Fine-grained Claim Dependency Graph}, 
       author={Xiaochen Kev Gao and Feng Yao and Kewen Zhao and Beilei He and Animesh Kumar and Vish Krishnan and Jingbo Shang},
