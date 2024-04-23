@@ -1,6 +1,6 @@
 # FLAN Graph for Patent Approval Prediction
 
-Source code and dataset for our paper "[Beyond Scaling: Predicting Patent Approval with Domain-specific Fine-grained Claim Dependency Graph]()"
+Source code and dataset for our paper "[Beyond Scaling: Predicting Patent Approval with Domain-specific Fine-grained Claim Dependency Graph](https://arxiv.org/pdf/2404.14372.pdf)"
 
 ## 0. Overview
 
@@ -24,3 +24,14 @@ The construction process and the saved results of the FLAN Graph can be found [h
 
 
 ## Citation
+If these codes and data help you, please consider citing us as follows.
+```abs
+@misc{gao2024scaling,
+      title={Beyond Scaling: Predicting Patent Approval with Domain-specific Fine-grained Claim Dependency Graph}, 
+      author={Xiaochen Kev Gao and Feng Yao and Kewen Zhao and Beilei He and Animesh Kumar and Vish Krishnan and Jingbo Shang},
+      year={2024},
+      eprint={2404.14372},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
